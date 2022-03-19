@@ -1,21 +1,25 @@
 import styled from 'styled-components';
-import Button from '../../shared/Button';
+import LinkButton from '../../shared/LinkButton';
 
 const Ul = styled.ul`
   padding: 0;
 `;
 
 const Li = styled.li`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   margin-bottom: 1rem;
 
-  button {
-    margin: 0 auto;
+  a {
+    display: inline-block;
   }
 `;
 
-function StartClapeyronButton() {
+function PropertiesPredictionButton() {
   return (
-    <Button>Start Clapeyron</Button>
+    <LinkButton to={"/pp/models"}>Properties Prediction</LinkButton>
   );
 }
 
@@ -25,7 +29,7 @@ function ParametersEstimationButton() {
   }
 
   return (
-    <Button onClick={onClick}>Parameters Estimation</Button>
+    <LinkButton onClick={onClick}>Parameters Estimation</LinkButton>
   );
 }
 
@@ -33,7 +37,7 @@ function ButtonsBox() {
 
   return (
     <Ul>
-      <Li><StartClapeyronButton/></Li>
+      <Li><PropertiesPredictionButton/></Li>
       <Li><ParametersEstimationButton/></Li>
     </Ul>
   );

@@ -11,6 +11,7 @@ const Section = styled.section`
 
 const UiWrapper = styled.div``;
 
+
 function Page({ children, centered = false }) {
   return (
     <Section centered={centered}>
