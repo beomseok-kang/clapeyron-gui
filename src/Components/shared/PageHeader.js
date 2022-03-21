@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import { useHistory, Link } from 'react-router-dom';
+import { headerHeight } from '../constants';
 
 const Header = styled.header`
+  height: ${headerHeight};
+
   display: flex;
   justify-content: space-between;
   align-items: center;

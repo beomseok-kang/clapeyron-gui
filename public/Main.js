@@ -4,8 +4,9 @@ const url = require('url');
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 600,
-    height: 400
+    width: 1440,
+    height: 960,
+    resizable: false
   });
 
   const startUrl = process.env.ELECTRON_START_URL || url.format({
