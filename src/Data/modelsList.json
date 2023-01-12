@@ -1,0 +1,23 @@
+[
+  {
+    "name": "SAFT",
+    "models": [
+      "BACKSAFT",
+      "CKSAFT",
+      "CPA",
+      "LJSAFT",
+      "PCSAFT",
+      "SAFTVRMie",
+      "SAFTVRSW",
+      "SAFTgammaMie",
+      "ogSAFT",
+      "softSAFT"
+    ]
+  },{
+    "name": "cubic",
+    "models": [
+      "RKPR"
+    ]
+  }
+
+]

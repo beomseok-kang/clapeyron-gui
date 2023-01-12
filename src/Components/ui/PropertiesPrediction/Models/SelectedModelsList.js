@@ -1,22 +1,20 @@
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import OrderedList from '../../../shared/OrderedList';
+import Orderedlist from '../../../shared/OrderedList';
 import ModelsListItem from './ModelsListItem';
 
-const StyledOrderedList = styled(OrderedList)`
+const StyledOrderedList = styled(Orderedlist)`
   height: 100%;
 `;
 
-function ModelsList() {
+function SelectedModelsList() {
   const models = useSelector(state => state.propertiesPrediction).models;
-  const dispatch = useDispatch();
 
   return (
     <StyledOrderedList>
-      Hello Ordered List
       {models.map(model => <ModelsListItem model={model}/>)}
     </StyledOrderedList>
   );
 }
 
-export default ModelsList;
+export default SelectedModelsList;

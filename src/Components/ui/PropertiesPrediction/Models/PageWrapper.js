@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { headerHeight } from '../../../constants';
-import AddModelButton from './AddModelButton';
-import ModelForm from './ModelForm';
-import ModelsList from './ModelsList';
+import AvailableModelsClassList from './AvailableModelsClassList';
+import SelectedModelsList from './SelectedModelsList';
 
 const Wrapper = styled.div`
   height: calc(100% - ${headerHeight});
 
   display: flex;
+  flex-direction: column;
   align-items: center;
 
   background: salmon;
@@ -16,9 +16,8 @@ const Wrapper = styled.div`
 function PageWrapper() {
   return (
     <Wrapper>
-      <ModelsList/>
-      <AddModelButton/>
-      <ModelForm/>
+      <AvailableModelsClassList/>
+      <SelectedModelsList/>
     </Wrapper>
   );
 }
