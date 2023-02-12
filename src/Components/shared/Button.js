@@ -20,6 +20,11 @@ export const buttonStyle = `
   &:active {
     background: #ccc;
   }
+
+  &.inactive {
+    pointer-events: none;
+    background: #666;
+  }
 `;
 
 const Button = styled.button`${buttonStyle}`;
