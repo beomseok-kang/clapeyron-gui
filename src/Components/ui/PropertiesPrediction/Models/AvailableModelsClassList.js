@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import modelsList from "../../../../Data/modelsList.json";
 import Button from '../../../shared/Button';
 import { useDispatch } from 'react-redux';
-import { addModel } from '../../../../Reducer/propertiesPrediction';
 import { useState } from 'react';
 import ListItem from '../../../shared/ListItem';
-import ModelsOrderedList from './ModelsOrderedList';
+import ModelsOrderedList from '../Shared/ModelsOrderedList';
+import ModelsListItem from '../Shared/ModelsListItem';
+import { addModel } from '../../../../Reducer/propertiesPrediction/models';
 
 const StyledListItem = styled(ListItem)`
   display: flex;
@@ -22,27 +23,24 @@ const StyledItemWrapper = styled.div`
   justify-content: space-between;
 `;
 
-function ModelsItem({ model, inactive }) {
+function ModelsItem({ model }) {
   const dispatch = useDispatch();
-  const [isInactive, setIsInactive] = useState(inactive);
 
   const onClick = () => {
     dispatch(addModel(model));
   };
 
   return (
-    <li>
-      <StyledItemWrapper>
-        {model.name}
-        <Button onClick={onClick} className={isInactive && "inactive"}>
+    <ModelsListItem>
+      {model.name}
+        <Button onClick={onClick}>
           Add
         </Button>
-      </StyledItemWrapper>
-    </li>
+    </ModelsListItem>
   );
 }
 
-function AvailableModelsClassListItem({ models, modelsClass }) {
+function AvailableModelsClassListItem({ modelsClass }) {
   // Models List Item
 
   const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +57,6 @@ function AvailableModelsClassListItem({ models, modelsClass }) {
           {modelsClass.models.map(model => <ModelsItem
             key={model.id}
             model={model}
-            inactive={!!models.find(m => m.id === model.id)}
           />)}
         </StyledList>
       }
@@ -71,7 +68,7 @@ function AvailableModelsClassListItem({ models, modelsClass }) {
 function AvailableModelsList({ models }) {
   // Available Models List
   return (
-    <ModelsOrderedList>
+    <ModelsOrderedList title="Available EoS's">
       {modelsList.map(mc => <AvailableModelsClassListItem models={models} modelsClass={mc}/>)}
     </ModelsOrderedList>
   );

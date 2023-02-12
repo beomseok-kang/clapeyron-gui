@@ -1,9 +1,8 @@
 import { combineReducers } from "redux";
 import propertiesPrediction from "./propertiesPrediction";
 
-
 const rootReducer = combineReducers({
-  propertiesPrediction
+  ...propertiesPrediction
 });
 
 export default rootReducer;

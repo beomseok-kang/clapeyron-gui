@@ -1,0 +1,1 @@
+The lists of components and models in this directory are just dummy examples.

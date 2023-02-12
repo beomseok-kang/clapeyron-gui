@@ -1,25 +1,25 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteModel } from '../../../../Reducer/propertiesPrediction';
+import { deleteModel } from '../../../../Reducer/propertiesPrediction/models';
 import Button from '../../../shared/Button';
-import ListItem from '../../../shared/ListItem';
-import ModelsOrderedList from './ModelsOrderedList';
+import ModelsListItem from '../Shared/ModelsListItem';
+import ModelsOrderedList from '../Shared/ModelsOrderedList';
 
-function ModelsListItem({ model }) {
+function ModelsItem({ model }) {
   const dispatch = useDispatch();
   const onClickDelete = () => dispatch(deleteModel(model));
 
   return (
-    <ListItem key={model.id}>
+    <ModelsListItem key={model.id}>
       {model.name}
       <Button onClick={onClickDelete}>Delete</Button>
-    </ListItem>
+    </ModelsListItem>
   );
 }
 
 function SelectedModelsList({ models }) {
   return (
-    <ModelsOrderedList>
-      {models.map(model => <ModelsListItem model={model}/>)}
+    <ModelsOrderedList title="Selected EoS's">
+      {models.map(model => <ModelsItem model={model}/>)}
     </ModelsOrderedList>
   );
 }
