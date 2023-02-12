@@ -7,7 +7,6 @@ const Wrapper = styled.div`
   height: calc(100% - ${headerHeight});
 
   display: flex;
-  flex-direction: column;
   align-items: center;
 
   background: salmon;
