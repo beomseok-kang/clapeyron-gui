@@ -5,43 +5,53 @@
     "models": [
       {
         "id": 101,
-        "name": "BACKSAFT"
+        "name": "BACKSAFT",
+        "components": ["water", "ethanol", "benzene"]
       },
       {
         "id": 102,
-        "name": "CKSAFT"
+        "name": "CKSAFT",
+        "components": ["water", "ethanol", "toluene"]
       },
       {
         "id": 103,
-        "name": "CPA"
+        "name": "CPA",
+        "components": ["water", "ethanol", "toluene"]
       },
       {
         "id": 104,
-        "name": "LJSAFT"
+        "name": "LJSAFT",
+        "components": ["water", "ethanol", "toluene"]
       },
       {
         "id": 105,
-        "name": "PCSAFT"
+        "name": "PCSAFT",
+        "components": ["water", "ethanol", "toluene"]
       },
       {
         "id": 106,
-        "name": "SAFTVRMie"
+        "name": "SAFTVRMie",
+        "components": ["water", "ethanol", "toluene"]
       },
       {
         "id": 107,
-        "name": "SAFTVRSW"
+        "name": "SAFTVRSW",
+        "components": ["water", "ethanol", "toluene"]
       },
       {
         "id": 108,
-        "name": "SAFTgammaMie"
+        "name": "SAFTgammaMie",
+        "components": ["water", "ethanol", "toluene"]
       },
       {
         "id": 109,
-        "name": "ogSAFT"
+        "name": "ogSAFT",
+        "components": ["water", "ethanol", "toluene"]
       },
       {
         "id": 110,
-        "name": "softSAFT"
+        "name": "softSAFT",
+        "components": ["water", "ethanol", "toluene"]
       }
     ]
   },{
@@ -50,7 +60,8 @@
     "models": [
       {
         "id": 201,
-        "name": "RKPR"
+        "name": "RKPR",
+        "components": ["water", "ethanol", "toluene"]
       }
     ]
   }

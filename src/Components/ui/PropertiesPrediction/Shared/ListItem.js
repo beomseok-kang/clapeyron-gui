@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+const StyledList = styled.li`
+  display: flex;
+`;
+
 const StyledItemWrapper = styled.div`
   display: flex;
   width: 100%;
@@ -8,14 +12,14 @@ const StyledItemWrapper = styled.div`
   background: cyan;
 `;
 
-function ModelsListItem({ children }) {
+function ListItem({ children }) {
   return (
-    <li>
+    <StyledList>
       <StyledItemWrapper>
         {children}
       </StyledItemWrapper>
-    </li>
+    </StyledList>
   );
 }
 
-export default ModelsListItem;
+export default ListItem;

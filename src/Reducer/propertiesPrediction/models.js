@@ -1,19 +1,32 @@
+import { findSharedComponents } from '../../Util/func';
+import { updateAvailableComponents } from './availableComponents';
+
 const ADD_MODEL = "pp/models/ADD_MODEL";
 const DELETE_MODEL = "pp/models/DELETE_MODEL";
 
 const initialState = [];
 
-export const addModel = model => ({
-  type: ADD_MODEL,
-  payload: model,
-  id: model.id
-});
+export const addModel = model => (dispatch, getState) => {
+  dispatch({
+    type: ADD_MODEL,
+    payload: model,
+    id: model.id
+  });
+  const models = getState().models;
+  const sharedComponents = findSharedComponents(models);
+  dispatch(updateAvailableComponents(sharedComponents));
+};
 
-export const deleteModel = model => ({
-  type: DELETE_MODEL,
-  payload: model.id,
-  id: model.id
-});
+export const deleteModel = model => (dispatch, getState) => {
+  dispatch({
+    type: DELETE_MODEL,
+    payload: model.id,
+    id: model.id
+  });
+  const models = getState().models;
+  const sharedComponents = findSharedComponents(models);
+  dispatch(updateAvailableComponents(sharedComponents));
+};
 
 function models(state = initialState, action) {
   switch(action.type) {

@@ -3,24 +3,12 @@ import modelsList from "../../../../Data/modelsList.json";
 import Button from '../../../shared/Button';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import ListItem from '../../../shared/ListItem';
-import ModelsOrderedList from '../Shared/ModelsOrderedList';
-import ModelsListItem from '../Shared/ModelsListItem';
+import OrderedList from '../Shared/OrderedList';
+import ListItem from '../Shared/ListItem';
 import { addModel } from '../../../../Reducer/propertiesPrediction/models';
 
-const StyledListItem = styled(ListItem)`
-  display: flex;
-`;
-
-const StyledList = styled.ul`
-  background: lightblue;
-
-`;
-
-const StyledItemWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+const StyledModelsClassListItem = styled.li`
+  background-color: yellow;
 `;
 
 function ModelsItem({ model }) {
@@ -31,23 +19,33 @@ function ModelsItem({ model }) {
   };
 
   return (
-    <ModelsListItem>
+    <ListItem>
       {model.name}
         <Button onClick={onClick}>
           Add
         </Button>
-    </ModelsListItem>
+    </ListItem>
   );
 }
 
-function AvailableModelsClassListItem({ modelsClass }) {
+const StyledList = styled.ul`
+  background: lightblue;
+`;
+
+const StyledItemWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+`;
+
+function ModelsClassListItem({ modelsClass }) {
   // Models List Item
 
   const [isOpen, setIsOpen] = useState(false);
   const onClick = () => setIsOpen(!isOpen);
 
   return (
-    <StyledListItem key={modelsClass.id}>
+    <StyledModelsClassListItem key={modelsClass.id}>
       <StyledItemWrapper>
         {modelsClass.name}
         <Button onClick={onClick}>{isOpen ? "Hide Models" : "Show Models"}</Button>
@@ -60,7 +58,7 @@ function AvailableModelsClassListItem({ modelsClass }) {
           />)}
         </StyledList>
       }
-    </StyledListItem>
+    </StyledModelsClassListItem>
   );
 }
 
@@ -68,9 +66,9 @@ function AvailableModelsClassListItem({ modelsClass }) {
 function AvailableModelsList({ models }) {
   // Available Models List
   return (
-    <ModelsOrderedList title="Available EoS's">
-      {modelsList.map(mc => <AvailableModelsClassListItem models={models} modelsClass={mc}/>)}
-    </ModelsOrderedList>
+    <OrderedList title="Available EoS's">
+      {modelsList.map(mc => <ModelsClassListItem modelsClass={mc}/>)}
+    </OrderedList>
   );
 }
 

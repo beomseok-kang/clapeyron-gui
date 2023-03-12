@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteModel } from '../../../../Reducer/propertiesPrediction/models';
 import Button from '../../../shared/Button';
-import ModelsListItem from '../Shared/ModelsListItem';
-import ModelsOrderedList from '../Shared/ModelsOrderedList';
+import ModelsListItem from '../Shared/ListItem';
+import ModelsOrderedList from '../Shared/OrderedList';
 
 function ModelsItem({ model }) {
   const dispatch = useDispatch();
