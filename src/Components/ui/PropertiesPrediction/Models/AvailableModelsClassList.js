@@ -14,16 +14,14 @@ const StyledModelsClassListItem = styled.li`
 function ModelsItem({ model }) {
   const dispatch = useDispatch();
 
-  const onClick = () => {
-    dispatch(addModel(model));
-  };
+  const onClick = () => dispatch(addModel(model));
 
   return (
     <ListItem>
       {model.name}
-        <Button onClick={onClick}>
-          Add
-        </Button>
+      <Button onClick={onClick}>
+        Add
+      </Button>
     </ListItem>
   );
 }
@@ -67,7 +65,7 @@ function AvailableModelsList({ models }) {
   // Available Models List
   return (
     <OrderedList title="Available EoS's">
-      {modelsList.map(mc => <ModelsClassListItem modelsClass={mc}/>)}
+      {modelsList.map(mc => <ModelsClassListItem modelsClass={mc} key={mc.id}/>)}
     </OrderedList>
   );
 }

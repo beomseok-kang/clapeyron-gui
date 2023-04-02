@@ -19,9 +19,22 @@ export const findSharedComponents = (list) => {
 
   for (const component in componentCounts) {
     if (componentCounts[component] === list.length) {
-      sharedComponents.push(component);
+      sharedComponents.push(parseInt(component));
     }
   }
 
   return sharedComponents;
-}
+};
+
+export const getComponentsByIds = (ids, components) => {
+  const idSet = new Set(ids);
+  const result = [];
+
+  for (let i = 0; i < components.length; i++) {
+    if (idSet.has(components[i].id)) {
+      result.push(components[i]);
+    }
+  }
+
+  return result;
+};

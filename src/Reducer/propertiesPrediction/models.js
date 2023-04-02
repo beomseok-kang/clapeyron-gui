@@ -1,6 +1,15 @@
 import { findSharedComponents } from '../../Util/func';
 import { updateAvailableComponents } from './availableComponents';
 
+/**
+ * Model:
+ * {
+ *  id: int
+ *  name: string
+ *  components: list[string]
+ * }
+ */
+
 const ADD_MODEL = "pp/models/ADD_MODEL";
 const DELETE_MODEL = "pp/models/DELETE_MODEL";
 

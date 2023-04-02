@@ -1,6 +1,14 @@
 const ADD_COMPONENT = "pp/components/ADD_COMPONENT";
 const DELETE_COMPONENT = "pp/components/DELETE_COMPONENT";
 
+/**
+ * Component:
+ * {
+ *  id: int
+ *  name: string
+ * }
+ */
+
 const initialState = [];
 
 export const addComponent = component => ({

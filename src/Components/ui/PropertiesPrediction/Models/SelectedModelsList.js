@@ -9,7 +9,7 @@ function ModelsItem({ model }) {
   const onClickDelete = () => dispatch(deleteModel(model));
 
   return (
-    <ModelsListItem key={model.id}>
+    <ModelsListItem>
       {model.name}
       <Button onClick={onClickDelete}>Delete</Button>
     </ModelsListItem>
@@ -19,7 +19,7 @@ function ModelsItem({ model }) {
 function SelectedModelsList({ models }) {
   return (
     <ModelsOrderedList title="Selected EoS's">
-      {models.map(model => <ModelsItem model={model}/>)}
+      {models.map(model => <ModelsItem model={model} key={model.id}/>)}
     </ModelsOrderedList>
   );
 }
