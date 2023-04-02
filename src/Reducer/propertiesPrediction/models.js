@@ -1,5 +1,6 @@
 import { findSharedComponents } from '../../Util/func';
 import { updateAvailableComponents } from './availableComponents';
+import { filterByComponentsIds } from './components';
 
 /**
  * Model:
@@ -15,15 +16,19 @@ const DELETE_MODEL = "pp/models/DELETE_MODEL";
 
 const initialState = [];
 
+const onModelsUpdate = (dispatch, models) => {
+  const sharedComponents = findSharedComponents(models);
+  dispatch(updateAvailableComponents(sharedComponents));
+  dispatch(filterByComponentsIds(sharedComponents));
+};
+
 export const addModel = model => (dispatch, getState) => {
   dispatch({
     type: ADD_MODEL,
     payload: model,
     id: model.id
   });
-  const models = getState().models;
-  const sharedComponents = findSharedComponents(models);
-  dispatch(updateAvailableComponents(sharedComponents));
+  onModelsUpdate(dispatch, getState().models);
 };
 
 export const deleteModel = model => (dispatch, getState) => {
@@ -32,9 +37,7 @@ export const deleteModel = model => (dispatch, getState) => {
     payload: model.id,
     id: model.id
   });
-  const models = getState().models;
-  const sharedComponents = findSharedComponents(models);
-  dispatch(updateAvailableComponents(sharedComponents));
+  onModelsUpdate(dispatch, getState().models);
 };
 
 function models(state = initialState, action) {
