@@ -16,12 +16,12 @@ function ModelsItem({ model }) {
   );
 }
 
-function SelectedModelsList({ models }) {
+function SelectedPropertiesList({ models }) {
   return (
-    <ModelsOrderedList title="Selected EOSs">
+    <ModelsOrderedList title="Selected Properties">
       {models.map(model => <ModelsItem model={model} key={model.id}/>)}
     </ModelsOrderedList>
   );
 }
 
-export default SelectedModelsList;
+export default SelectedPropertiesList;

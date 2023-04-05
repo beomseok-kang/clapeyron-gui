@@ -61,13 +61,13 @@ function ModelsClassListItem({ modelsClass }) {
 }
 
 
-function AvailableModelsList({ models }) {
+function AvailablePropertiesList({ models }) {
   // Available Models List
   return (
-    <OrderedList title="Available EOSs">
+    <OrderedList title="Available Properties">
       {modelsList.map(mc => <ModelsClassListItem modelsClass={mc} key={mc.id}/>)}
     </OrderedList>
   );
 }
 
-export default AvailableModelsList;
+export default AvailablePropertiesList;
