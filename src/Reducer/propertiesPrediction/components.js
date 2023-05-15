@@ -1,4 +1,4 @@
-import { getComponentsByIds } from "../../Util/func";
+import { getElementsByIds } from "../../Util/func";
 
 const ADD_COMPONENT = "pp/components/ADD_COMPONENT";
 const DELETE_COMPONENT = "pp/components/DELETE_COMPONENT";
@@ -41,7 +41,7 @@ function components(state = initialState, action) {
     case DELETE_COMPONENT:
       return state.filter(m => m.id !== action.payload);
     case FILTER_BY_COMPONENTS_IDS:
-      return getComponentsByIds(action.payload, state);
+      return getElementsByIds(action.payload, state);
     default:
       return state;
   }

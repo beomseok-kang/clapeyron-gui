@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import Button from '../../../shared/Button';
 import { addComponent } from '../../../../Reducer/propertiesPrediction/components';
 import componentsList from '../../../../Data/componentsList.json';
-import { getComponentsByIds } from '../../../../Util/func';
+import { getElementsByIds } from '../../../../Util/func';
 
 function ComponentsItem({ component }) {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ function ComponentsItem({ component }) {
 }
 
 function AvailableComponentsList({components, availableComponentsIds}) {
-  const availableComponents = getComponentsByIds(availableComponentsIds, componentsList);
+  const availableComponents = getElementsByIds(availableComponentsIds, componentsList);
 
   return (
     <OrderedList title={"Available Components"}>

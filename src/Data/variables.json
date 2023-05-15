@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "temperature",
+    "type": "float"
+  },
+  {
+    "id": 2,
+    "name": "pressure",
+    "type": "float"
+  },
+  {
+    "id": 3,
+    "name": "composition",
+    "type": "list[float]"
+  }
+]

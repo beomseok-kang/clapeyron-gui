@@ -1,8 +1,8 @@
-export const findSharedComponents = (list) => {
+export const findSharedElements = (list, prop) => {
   const componentCounts = {};
 
   for (let i = 0; i < list.length; i++) {
-    const components = list[i].components;
+    const components = list[i][prop];
 
     for (let j = 0; j < components.length; j++) {
       const component = components[j];
@@ -26,13 +26,13 @@ export const findSharedComponents = (list) => {
   return sharedComponents;
 };
 
-export const getComponentsByIds = (ids, components) => {
+export const getElementsByIds = (ids, list) => {
   const idSet = new Set(ids);
   const result = [];
 
-  for (let i = 0; i < components.length; i++) {
-    if (idSet.has(components[i].id)) {
-      result.push(components[i]);
+  for (let i = 0; i < list.length; i++) {
+    if (idSet.has(list[i].id)) {
+      result.push(list[i]);
     }
   }
 

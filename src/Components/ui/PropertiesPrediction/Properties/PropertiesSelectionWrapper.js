@@ -4,12 +4,13 @@ import AvailablePropertiesList from './AvailablePropertiesList';
 import SelectedPropertiesList from './SelectedPropertiesList';
 
 function PropertiesSelectionWrapper() {
-  const models = useSelector(state => state.models);
+  const properties = useSelector(state => state.properties);
+  const availableProperties = useSelector(state => state.availableProperties);
 
   return (
     <Wrapper>
-      <AvailablePropertiesList models={models}/>
-      <SelectedPropertiesList models={models}/>
+      <AvailablePropertiesList properties={properties} availablePropertiesIds={availableProperties}/>
+      <SelectedPropertiesList properties={properties}  availableProperties={availableProperties}/>
     </Wrapper>
   );
 }
